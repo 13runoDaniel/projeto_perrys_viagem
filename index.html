@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icons/aviao.ico">
+    <title>Perry's Viagem</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    body{
+        font-family: 'Arvo', serif;
+    }
+    .navbar,
+    .nome_destino{
+        background-color: rgb(5, 5, 54);
+    }
+    .navbar ul li a,
+    .navbar ul li a:hover,
+    .nav_destino .nav-link:hover{
+        color: #0d6efd;
+    }
+    .nav .nav-link.active{
+        background-color: #0d6efd;
+        color: #f0f3f3;
+    }
+    .container > h1{
+        color: #f0f3f3;
+        font-size: 40px;
+    }
+    .nome_destino,
+    .nav_destino .nav-link.active:hover,
+    .text-colored{
+        color: #f0f3f3;
+    }
+    #destinos{
+        background-color: rgb(205, 224, 240);
+    }
+    #sobre_nos,
+    #fale_conosco,
+    #btn_hamburguer{
+        background-color: #0d6efd;
+    }
+    .imagem_destino img{
+        height: 160px;
+    }
+    .imagem_carousel img{
+        max-height: 500px;
+    }
+    #btn-formulario,
+    #btn-formulario:hover{
+        background-color: rgb(5, 5, 54);
+    }
+    .social-links li{
+        list-style: none;
+        display: inline;
+    }
+    .social-links li a{
+        text-decoration: none;
+    }
+    textarea{
+        height: 150px;
+        resize: none;
+    }
+</style>
+<body>
+    <header class="navbar navbar-expand-lg sticky-top p-4" id="cabecalho">
+        <div class="container">
+            <h1 class="navbar-brand m-0 fw-bold">Perry's Viagem</h1>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu_navegacao" id="btn_hamburguer">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="navbar-collapse collapse justify-content-end" id="menu_navegacao">
+                <ul class="nav nav-pills d-block d-md-flex">
+                    <li class="nav-item fw-bold">
+                        <a href="#destaque" class="nav-link active">
+                            <i class="bi bi-card-image me-1"></i>
+                            Destaques
+                        </a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a href="#sobre_nos" class="nav-link">
+                            <i class="bi bi-house me-1"></i>
+                            Sobre nós
+                        </a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a href="#destinos" class="nav-link">
+                            <i class="bi bi-airplane-engines me-1"></i>
+                            Destinos
+                        </a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a href="#fale_conosco" class="nav-link">
+                            <i class="bi bi-chat-dots me-1"></i>
+                            Fale conosco
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div data-bs-spy="scroll" data-bs-target="#cabecalho" data-bs-smooth-scroll="true">
+        <section id="destaque">
+            <div class="carousel slide" data-bs-ride="carousel" id="carousel_imagem">
+                <div class="carousel-inner">
+                    <div class="carousel-item active imagem_carousel" data-bs-interval="2000">
+                        <img src="./images/carousel/carousel.jpg" class="w-100" alt="">
+                    </div>
+                    <div class="carousel-item imagem_carousel" data-bs-interval="2000">
+                        <img src="./images/carousel/carousel_1.jpg" class="w-100" alt="">
+                    </div>
+                    <div class="carousel-item imagem_carousel" data-bs-interval="2000">
+                        <img src="./images/carousel/carousel_2.jpg" class="w-100" alt="">
+                    </div>
+                    <div class="carousel-item imagem_carousel" data-bs-interval="2000">
+                        <img src="./images/carousel/carousel_3.jpeg" class="w-100" alt="">
+                    </div>
+                </div>
+                <button type="button" class="carousel-control-prev" data-bs-target="#carousel_imagem" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button type="button" class="carousel-control-next" data-bs-target="#carousel_imagem" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+                <div class="carousel-indicators">
+                    <button type="button" class="active" data-bs-target="#carousel_imagem" data-bs-slide-to="0"></button>
+                    <button type="button" data-bs-target="#carousel_imagem" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carousel_imagem" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#carousel_imagem" data-bs-slide-to="3"></button>
+                </div>
+            </div>
+        </section>
+        <section id="sobre_nos" class="text-colored">
+            <div class="pt-5 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="./images/sobre_nos.jpg" alt="Agência de viagem" class="d-block w-100 rounted">
+                        </div>
+                        <div class="col-md-7 mt-3 mt-md-0">
+                            <h2 class="">Sobre nós</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolores ad ipsum repudiandae praesentium iste sequi at amet nobis accusantium laborum molestias, similique esse. Voluptatem distinctio non obcaecati nam tempora.
+                            </p>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis fugit cupiditate quia. Impedit dolorem quod saepe nihil. Quos beatae laboriosam similique molestiae omnis deserunt.
+                            </p>
+                            <h3>Trabalhamos com destinos à</h3>
+                            <ul>
+                                <li>Praia</li>
+                                <li>Interior</li>
+                                <li>Cruzeiro</li>
+                                <li>Radical</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="destinos" class="pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-center">Destinos</h2>
+                </div>
+                <div class="row">
+                    <aside class="col-md-2">
+                        <nav class="nav nav-pills flex-column nav_destino">
+                            <button type="button" class="nav-link text-start fw-bold active" data-bs-toggle="tab" data-bs-target="#praia">Praia</button>
+                            <button type="button" class="nav-link text-start fw-bold" data-bs-toggle="tab" data-bs-target="#interior">Interior</button>
+                            <button type="button" class="nav-link text-start fw-bold" data-bs-toggle="tab" data-bs-target="#cruzeiro">Cruzeiro</button>
+                            <button type="button" class="nav-link text-start fw-bold" data-bs-toggle="tab" data-bs-target="#radical">Radical</button>
+                        </nav>
+                    </aside>
+                    <div class="col-md-10">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="praia">
+                                <div class="row">
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Praia da cabana</h5>
+                                        <img src="./images/praia/praia.jpeg" class="d-block w-100" alt="Praia da cabana">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Praia vermelha</h5>
+                                        <img src="./images/praia/praia_1.jpeg" class="d-block w-100" alt="Praia vermelha">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Ilha da lagoa</h5>
+                                        <img src="./images/praia/praia_2.jpeg" class="d-block w-100" alt="Ilha da lagoa">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Belas do monte</h5>
+                                        <img src="./images/praia/praia_3.jpeg" class="d-block w-100" alt="Belas do monte">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Águas claras</h5>
+                                        <img src="./images/praia/praia_4.jpeg" class="d-block w-100" alt="Águas claras">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Ilha majestade</h5>
+                                        <img src="./images/praia/praia_5.jpeg" class="d-block w-100" alt="Ilha majestade">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Praia dividida</h5>
+                                        <img src="./images/praia/praia_6.jpeg" class="d-block w-100" alt="Praia dividida">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Mar da cabana</h5>
+                                        <img src="./images/praia/praia_7.jpeg" class="d-block w-100" alt="Mar da cabana">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="interior">
+                                <div class="row">
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Montanhas do mar</h5>
+                                        <img src="./images/interior/interior.jpeg" class="d-block w-100" alt="Montanhas do mar">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Pantano da beleza</h5>
+                                        <img src="./images/interior/interior_1.jpeg" class="d-block w-100" alt="Pantano da beleza">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Cidade das plantas</h5>
+                                        <img src="./images/interior/interior_2.jpeg" class="d-block w-100" alt="Cidade das plantas">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Moinho do bosque</h5>
+                                        <img src="./images/interior/interior_3.jpeg" class="d-block w-100" alt="Moinho do bosque">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Rancho de Sá</h5>
+                                        <img src="./images/interior/interior_4.jpeg" class="d-block w-100" alt="Rancho de Sá">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Cidade das lhamas</h5>
+                                        <img src="./images/interior/interior_5.jpeg" class="d-block w-100" alt="Cidade das lhamas">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Caxanduva</h5>
+                                        <img src="./images/interior/interior_6.jpeg" class="d-block w-100" alt="Caxanduva">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Gadópolis</h5>
+                                        <img src="./images/interior/interior_7.jpeg" class="d-block w-100" alt="Gadópolis">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="cruzeiro">
+                                <div class="row">
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Titanico falsificado</h5>
+                                        <img src="./images/cruzeiro/cruzeiro.jpeg" class="d-block w-100" alt="Titanico falsificado">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Navio golias</h5>
+                                        <img src="./images/cruzeiro/cruzeiro_1.jpeg" class="d-block w-100" alt="Navio golias">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Navio canoa</h5>
+                                        <img src="./images/cruzeiro/cruzeiro_2.jpeg" class="d-block w-100" alt="Navio canoa">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Imperial</h5>
+                                        <img src="./images/cruzeiro/cruzeiro_3.jpeg" class="d-block w-100" alt="Imperial">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Carnaval do mar</h5>
+                                        <img src="./images/cruzeiro/cruzeiro_4.jpeg" class="d-block w-100" alt="Carnaval do mar">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Bicudo atlantico</h5>
+                                        <img src="./images/cruzeiro/cruzeiro_5.jpeg" class="d-block w-100" alt="Bicudo atlantico">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Economic</h5>
+                                        <img src="./images/cruzeiro/cruzeiro_6.jpeg" class="d-block w-100" alt="Economic">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Cachote</h5>
+                                        <img src="./images/cruzeiro/cruzeiro_7.jpeg" class="d-block w-100" alt="Cachote">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="radical">
+                                <div class="row">
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Ski na neve</h5>
+                                        <img src="./images/radical/radical.jpeg" class="d-block w-100" alt="Ski na neve">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Paraquedas</h5>
+                                        <img src="./images/radical/radical_1.jpeg" class="d-block w-100" alt="Paraquedas">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Balão</h5>
+                                        <img src="./images/radical/radical_2.jpeg" class="d-block w-100" alt="Balão">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                    <div class="col-md-3 imagem_destino">
+                                        <h5 class="nome_destino text-center fw-bold p-2 rounded">Asa delta</h5>
+                                        <img src="./images/radical/radical_3.jpeg" class="d-block w-100" alt="Asa delta">
+                                        <button type="button" class="btn btn-primary fw-bold btn_destino w-100 mt-2 mb-2">Meu destino é</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="fale_conosco" class="pt-5 pb-5 text-colored">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-center">Fale conosco</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 mb-5">
+                        <form>
+                            <div class="mb-3">
+                                <label for="nome" class="form-label text-colored">Seu nome:</label>
+                                <input type="text" name="nome" id="nome" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefone" class="form-label text-colored">Seu telefone:</label>
+                                <input type="text" name="telefone" id="telefone" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label text-colored">Seu e-mail:</label>
+                                <input type="text" name="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="meu_destino_e" class="form-label text-colored">Meu destino é:</label>
+                                <input type="text" name="meu_destino_e" id="meu_destino_e" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label text-colored">Meu destino é:</label>
+                                <textarea name="mensagem" id="mensagem" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="btn-formulario">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="row">
+                            <h4 class=" text-colored">Redes sociais</h4>
+                            <ul class="social-links">
+                                <li class="fs-5">
+                                    <a href="https://www.facebook.com/">
+                                        <i class="bi bi-facebook text-colored"></i>
+                                    </a>
+                                </li>
+                                <li class="fs-5 ms-1 me-1">
+                                    <a href="https://www.instagram.com/">
+                                        <i class="bi bi-instagram text-colored"></i>
+                                    </a>
+                                </li>
+                                <li class="fs-5">
+                                    <a href="https://web.whatsapp.com/">
+                                        <i class="bi bi-whatsapp text-colored"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row mt-4">
+                            <h4 class="text-colored">
+                                <i class="bi bi-cursor-fill"></i>
+                                Endereço
+                            </h4>
+                            <p>
+                                Rua Navegação nº828, Bairro Mar Aberto - São Paulo - SP
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="./lib/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/messages_pt_BR.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
